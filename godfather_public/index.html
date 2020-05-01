@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>God father game</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+
+<html>
+<body>
+<div class="body">
+
+<head>
+    <div class="header">
+    <img src="images/logo.png" alt="">
+    <input class="bgm_btn" type="button" id="sound_off" value="sound_off" onClick="sound3()">
+    </div>  
+</head>
+ 
+<image>
+<div class="image">
+    <div class="sa sa--up">
+        <div class="img_title">
+        <p><span>権力</span>という孤独</br>
+            　<span>愛</span>という哀しみ</br>
+            　　<span>男</span>という生き方</p></div>  
+    </div>
+    <div class="sa sa--up">
+        <div class="img_back"></div>
+    </div>
+</div>
+</image>
+
+<!--<audio preload="auto">
+    <source src="/Back to Me Moonchild.mp3" type="audio/mp3">
+    <source src="/Pulse Spike C4.wav" type="audio/wav">
+    <p>（audio要素に非対応なブラウザ向けの表示）</p>
+ </audio>-->
+
+<containts>
+<div class="containts_course">
+
+    <div class="course_text">
+    <div class="sa sa--rl">
+      <p>あなたはゴッドファーザー：ヴィトー・コルネオーリの</br>
+      依頼を忠実に引き受け、コルネオーリ家のトップマフィアを目指します。</br>
+      権力の為には、そして家族の為には、自身の命も、そして誰かの愛も犠牲にする覚悟が必要です。</br>
+      <span>その覚悟はあなたにありますか。</span></p>
+    </div>
+    </div> 
+
+  <div vlass="rule">
+    <div class="sa sa--rl">
+    <img src="images/rule.001.png" alt="">
+    </div>
+
+    <div class="sa sa--rl">
+    <div class="rule_text">
+    <p>使える手段は三つ、<span>①会合　②ピストル　③精神攻撃　</span>です。</p>
+    <ul>
+    <li>・<span>会合</span>を開き複数で集まれば<span>ピストル</span>を持った相手に空気読めないやつ認定ができ、勝てます。</li>
+    <li>・<span>ピストル</span>を使えば<span>精神攻撃</span>をしようとする相手を撃ち、勝てます。</li>
+    <li>・<span>精神攻撃</span>を使えば<span>会合</span>の場で相手を窮地に追い込むことができ、勝てます。</li>
+    <li>・お互いに同じ手段を選んでしまった場合は牽制し合うので、あいことなります。</li>
+    </ul>
+    </div>
+    </div>
+  </div>
+
+    <div class="course_img">
+        <div class="mask">
+          <a class="caption" value="音を鳴らす/止める" onClick="sound()" id="button">依頼を引き受ける</a>
+          <audio id="sound-file" preload="auto">
+              <source src="images/theme.mp3" type="audio/mp3">
+          </audio>
+          <!--<audio id="sound-file" preload="auto" autoplay>
+            <source src="images/theme.mp3" type="audio/mp3">
+        </audio>-->
+
+        </div>
+    </div>
+</div>
+</containts>
+
+<game1>
+<div class="background_game">
+    <p>宿敵</br>バルジー二</p>
+
+    <div class="icon_k">
+        <img class="behind" id="icon_k" src="images/know.png" alt="">
+    </div>
+    <div class="icon_e">
+        <img class="behind" id="icon_e" src="images/explosion.png" alt="">
+    </div>
+    <div class="icon_p">
+        <img class="behind" id="icon_p" src="images/pressure.png" alt="">
+    </div>
+
+    <div class="result_video">
+        <video id="result_video" class="behind" src="images/win.m4v" autoplay loop muted></video>
+    </div>
+
+    <div class="icon_text">
+    <div class="icon_textresult">
+        <h class="behind" id="icon_gameover">敗北</h></div>
+    <div class="icon_textresult">
+        <h class="behind" id="icon_cong">勝利</h></div>
+    <div class="icon_textresult">
+        <h2 class="behind" id="icon_keep">あいこ</h2></div>
+    </div>
+</div>
+</game1>
+<form>
+<div class="form">
+<div class="form_button">
+    <input type="button" value="会合" onclick="rsp(0);">
+    <audio id="sf_know1" preload="auto">
+        <source src="images/know.mp3" type="audio/wav">
+    </audio>
+    <input  type="button" value="ピストル" onclick="rsp(1);">
+    <audio id="sf_pistol1" preload="auto">
+        <source src="images/pistol.mp3" type="audio/wav">
+    </audio>
+    <input type="button" value="精神攻撃" onclick="rsp(2);">
+    <audio id="sf_pressure1" preload="auto">
+        <source src="images/pressure.mp3" type="audio/wav">
+    </audio>
+</div>
+
+<div class="reset">
+    <input type="button" id="reset" value="reset">
+</div>
+</div>
+</form>
+
+<game2>
+    <div class="background_game2" >
+        <p>暴君</br>チッチオ</p>
+    
+        <div class="icon_k">
+            <img class="behind" id="icon_k2" src="images/know.png" alt="">
+        </div>
+        <div class="icon_e">
+            <img class="behind" id="icon_e2" src="images/explosion.png" alt="">
+        </div>
+        <div class="icon_p">
+            <img class="behind" id="icon_p2" src="images/pressure.png" alt="">
+        </div>
+    
+        <div class="result_video">
+            <video id="icon_vic2" class="behind" src="images/win.m4v" autoplay loop muted></video>
+        </div>
+        <div class="result_video">
+            <video id="icon_loose2" class="behind" src="images/loose.m4v" autoplay loop muted></video>
+        </div>
+        <div class="result_video">
+            <video id="icon_aiko2" class="behind" src="images/aiko.m4v" autoplay loop muted></video>
+        </div>
+    
+        <div class="icon_text">
+        <div class="icon_textresult">
+            <h class="behind" id="icon_gameover2">敗北</h></div>
+        <div class="icon_textresult">
+            <h class="behind" id="icon_cong2">勝利</h></div>
+        <div class="icon_textresult">
+            <h2 class="behind" id="icon_keep2">あいこ</h2></div>
+        </div>
+    </div>
+    </game2>
+    <form2>
+    <div class="form">
+    <div class="form_button">
+        <input type="button" value="会合" onclick="rsp2(0);">
+        <audio id="sf_know2" preload="auto">
+            <source src="images/know.mp3" type="audio/wav">
+        </audio>
+        <input  type="button" value="ピストル" onclick="rsp2(1);">
+        <audio id="sf_pistol2" preload="auto">
+            <source src="images/pistol.mp3" type="audio/wav">
+        </audio>
+        <input type="button" value="精神攻撃" onclick="rsp2(2);">
+        <audio id="sf_pressure2" preload="auto">
+            <source src="images/pressure.mp3" type="audio/wav">
+        </audio>
+    </div>
+    <div class="reset">
+        <input type="button" id="reset2" value="reset">
+    </div>
+    </div>
+    </form2>
+
+    <game3>
+        <div class="background_game3" >
+            <p>忌敵</br>モスカ</p>
+        
+            <div class="icon_k">
+                <img class="behind" id="icon_k3" src="images/know.png" alt="">
+            </div>
+            <div class="icon_e">
+                <img class="behind" id="icon_e3" src="images/explosion.png" alt="">
+            </div>
+            <div class="icon_p">
+                <img class="behind" id="icon_p3" src="images/pressure.png" alt="">
+            </div>
+        
+            <div class="result_video">
+                <video id="icon_vic3" class="behind" src="images/win.m4v" autoplay loop muted></video>
+            </div>
+            <div class="result_video">
+                <video id="icon_loose3" class="behind" src="images/loose.m4v" autoplay loop muted></video>
+            </div>
+            <div class="result_video">
+                <video id="icon_aiko3" class="behind" src="images/aiko.m4v" autoplay loop muted></video>
+            </div>
+        
+            <div class="icon_text">
+            <div class="icon_textresult">
+                <h class="behind" id="icon_gameover3">敗北</h></div>
+            <div class="icon_textresult">
+                <h class="behind" id="icon_cong3">勝利</h></div>
+            <div class="icon_textresult">
+                <h2 class="behind" id="icon_keep3">あいこ</h2></div>
+            </div>
+        </div>
+        </game3>
+        <form3>
+        <div class="form">
+        <div class="form_button">
+            <input type="button" value="会合" onclick="rsp3(0);">
+            <audio id="sf_know3" preload="auto">
+                <source src="images/know.mp3" type="audio/wav">
+            </audio>
+            <input  type="button" value="ピストル" onclick="rsp3(1);">
+            <audio id="sf_pistol3" preload="auto">
+                <source src="images/pistol.mp3" type="audio/wav">
+            </audio>
+            <input type="button" value="精神攻撃" onclick="rsp3(2);">
+            <audio id="sf_pressure3" preload="auto">
+                <source src="images/pressure.mp3" type="audio/wav">
+            </audio>
+        </div>
+        <div class="reset">
+            <input type="button" id="reset3" value="reset">
+        </div>
+        </div>
+        </form3>
+
+<result>
+    <div class="result_text">
+        <div class="sa sa--rl">
+          <p><span>男として生きる覚悟をしたとき、得たものとは</span>
+          </br>幾多のマフィアとの抗争の果てに、あなたはついに
+          </br>コルネオーリ家の一員として迎えられるトップマフィアとなりました。
+          </br>争いの果てに見た世界とは。
+          </p>
+        </div>
+        </div> 
+
+    <div class="result_img">
+            <div class="mask">
+              <a class="caption" type="button" id="game_result" value="game_result"  onClick="" >結果を見てみる</a>
+              <!--<audio id="sound-file2" preload="auto">
+                  <source src="" type="audio/mp3">
+              </audio>-->
+            </div>
+        </div>
+
+<div class="result_containts">
+<div class="result_character">
+<div class="sa sa--rl">
+    <div class="result_text">
+            <div class="r_t">
+                <h class="behind" id="icon_type_a">ヴィトー</br>コルネオーリ</h></div>
+            <div class="r_t">
+                <h class="behind" id="icon_type_b">マイケル</br>コルネオーリ</h></div>
+            <div class="r_t">
+                <h class="behind" id="icon_type_c">ヴィンセント</h></div>
+    </div>
+    <div class="result_image">
+        <div class="type_image">
+            <img class="behind" id="type_a" src="images/A.jpg" alt="">
+        </div>
+        <div class="type_image">
+            <img class="behind" id="type_b" src="images/B.jpg" alt="">
+        </div>
+        <div class="type_image">
+            <img class="behind" id="type_c" src="images/C.jpg" alt="">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="result_containts2">
+    <div class="sa sa--rl">
+       <div class="kaisetsu">
+        <div class="type_k_text">
+        <p class="behind" id="type_a_text"  ><span>あなたはヴィトー・コルネオーリ：タイプ</span>
+        </br>転生の幸運の持ち主のあなた。
+        </br>実力はもちろんのこと、己の強運により地位を築き上げ、そして人々に愛されてきました。</br>
+        満たされた人生はカリスマをその身に宿しこれからも人々を惹きつけていくでしょう。
+        </p></div>
+        <div class="type_k_text">
+        <p class="behind" id="type_b_text"><span>あなたはマイケル・コルネオーリ：タイプ</span>
+        </br>転生の才能で幾ばくもの困難を乗り越えてきたあなた。
+        </br>どんな不幸をも原動力にし、自分を信じて乗り越えてきた結果にいまがあります。
+        </br>影の努力は自信へとつながっていますが、完璧主義から抜け出したときまた新たな魅力を発揮できるでしょう。
+        </p></div>
+        <div class="type_k_text">
+        <p class="behind" id="type_c_text" ><span>あなたはヴィンセント：タイプ</span>
+        </br>あくなき好奇心と不思議な魅力を持つあなた。
+        </br>若さゆえの熱量でこれまでの困難を乗り切ってきたことでしょう。
+        </br>しかし本当のトップとなるには、圧倒的な実力、そして運が必要です。
+        </br>幾多の困難を乗り越えたとき。その時がいつか本物の実力者となるときなのでしょう。
+        </p></div>
+      </div>
+    </div>
+</div> 
+
+</div>
+
+<div class="game_clear">
+    <div class="sa sa--rl">
+        <p>もう一度挑戦する。</p></div>
+    <div class="sa sa--rl">
+    <div class="clear_btn_box">
+        <a href="#" ><input class="clear_btn" type="button" id="game_clear" value="game_clear" onClick="sound2()"></a></div>
+</div>
+
+<footer class="footer">
+   <p class="footer_text">copylights 2020 Koichi Hatakeyama Rights Reserved .</p>
+</footer>
+
+      <!-- jquery が先 -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="./script.js"></script>
+    <script src="./script-2.js"></script>
+</div>
+</body>
+
+</html>
